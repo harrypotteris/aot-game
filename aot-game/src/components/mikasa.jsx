@@ -9,7 +9,7 @@ import { useFrame } from '@react-three/fiber'
 export default function Mikasa({ active, ...props }) {
 
   const { nodes, materials } =
-    useGLTF('/models/mikasa.glb')
+    useGLTF(import.meta.env.BASE_URL + 'models/mikasa.glb')
 
   // =========================
   // MODEL
@@ -316,4 +316,4 @@ export default function Mikasa({ active, ...props }) {
   )
 }
 
-useGLTF.preload('/models/mikasa.glb')
+useGLTF.preload(import.meta.env.BASE_URL + 'models/mikasa.glb')

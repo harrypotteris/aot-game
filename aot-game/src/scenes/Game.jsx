@@ -15,9 +15,17 @@ export default function Game() {
       {/* =========================
           CHARACTER UI
       ========================= */}
-      <Html fullscreen>
+      <Html
+        style={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          width: '250px',
+          pointerEvents: 'auto'
+        }}
+      >
 
-        <div className="character-ui">
+        <div className="character-ui" style={{ fontSize: '12px' }}>
 
           {/* EREN */}
           <div
@@ -26,17 +34,23 @@ export default function Game() {
                 ? "card active"
                 : "card"
             }
-
+            style={{
+              padding: '8px',
+              marginBottom: '8px',
+              cursor: 'pointer',
+              background: selectedCharacter === "eren" ? '#4CAF50' : '#f0f0f0',
+              border: '1px solid #ccc',
+              borderRadius: '4px'
+            }}
             onClick={() =>
               setSelectedCharacter("eren")
             }
           >
 
-            <h2>Eren Yeager</h2>
+            <h2 style={{ margin: '0 0 4px 0', fontSize: '14px' }}>Eren Yeager</h2>
 
-            <p>
-              Aggressive titan fighter with
-              powerful movement and strong attacks.
+            <p style={{ margin: '0', fontSize: '10px' }}>
+              Aggressive titan fighter with powerful movement.
             </p>
 
           </div>
@@ -48,17 +62,23 @@ export default function Game() {
                 ? "card active"
                 : "card"
             }
-
+            style={{
+              padding: '8px',
+              marginBottom: '8px',
+              cursor: 'pointer',
+              background: selectedCharacter === "mikasa" ? '#4CAF50' : '#f0f0f0',
+              border: '1px solid #ccc',
+              borderRadius: '4px'
+            }}
             onClick={() =>
               setSelectedCharacter("mikasa")
             }
           >
 
-            <h2>Mikasa Ackerman</h2>
+            <h2 style={{ margin: '0 0 4px 0', fontSize: '14px' }}>Mikasa Ackerman</h2>
 
-            <p>
-              Elite soldier with unmatched
-              precision and fast combat skills.
+            <p style={{ margin: '0', fontSize: '10px' }}>
+              Elite soldier with unmatched precision.
             </p>
 
           </div>
@@ -75,12 +95,14 @@ export default function Game() {
       <Eren
         position={[-4, -6.5, 0]}
         scale={0.45}
+        active={selectedCharacter === "eren"}
       />
 
       {/* MIKASA */}
       <Mikasa
         position={[4, -6.5, 0]}
         scale={0.45}
+        active={selectedCharacter === "mikasa"}
       />
 
     </>
