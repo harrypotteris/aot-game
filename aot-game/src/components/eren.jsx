@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber"
 
 export default function Eren({ active, ...props }) {
 
-  const { scene } = useGLTF("/models/eren.glb")
+  const { scene } = useGLTF(import.meta.env.BASE_URL + "models/eren.glb")
 
   const model = useRef()
 
@@ -239,4 +239,4 @@ export default function Eren({ active, ...props }) {
   )
 }
 
-useGLTF.preload("/models/eren.glb")
+useGLTF.preload(import.meta.env.BASE_URL + "models/eren.glb")
